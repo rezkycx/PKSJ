@@ -38,16 +38,33 @@ Dibawah ini ada langkah-langkah penginstalan dalam bentuk screenshot
 ![gambar1](install kali linux/21.jpg)
 ![gambar1](install kali linux/22.jpg)
 ![gambar1](install kali linux/23.jpg)
-## D.Instalasi Open SSH server
-## E.Uji Penetrasi 1
+## D.Install Open SSH server
+Melakukan Penginstallan SSH Server untuk enkripsi data pada jaringan
+![gambar1](Config SSH/3.jpg)
+![gambar1](Config SSH/4.jpg)
+## E.Install fail2ban
+Kami melakukan penginstallan fail2ban pada ubuntu server sebagai countermeasures dari THC-Hydra yang dilakukan oleh kali linux
+![gambar1](install fail2ban/1.jpg)
+![gambar1](install fail2ban/2.jpg)
+![gambar1](install fail2ban/3.jpg)
+![gambar1](install fail2ban/4.jpg)
+![gambar1](install fail2ban/5.jpg)
+## F.Uji Penetrasi 1
+Selanjutnya kami melakukan uji penetrasi menggunakan THC-Hydra yang sudah terinstall pada kali linux.
+kemudian masuk ke terminal dan melakukan syntax dibawah
 ![gambar1](Penetrasi 1/1.jpg)
+melakuakn attacking ke port 22
 ![gambar1](Penetrasi 1/2.jpg)
+pada screenshot dibawah dapat kita lihat password dari ubuntu server berhasil didapatkan yaitu jarvis
 ![gambar1](Penetrasi 1/3.jpg)
-## F.Konfigurasi SSH
+## G.Konfigurasi SSH
+Selanjutnya konfigurasi SSH kami lakukan pada port dengan mengganti yang awalnya 22 menadi 6565
 ![gambar1](Config SSH/1.jpg)
 ![gambar1](Config SSH/2.jpg)
-## G.Uji Penetrasi 2
+## H.Uji Penetrasi 2
+Selanjutnya pada uji penetrasi 2 kita melakukan penetrasi dengan THC-Hydra seperti pada uji penetrasi 1
 ![gambar1](Penetrasi 2/1.jpg)
+Hasil penetrasi gagal karean Ubuntu server telah menggunakan fail2ban
 ![gambar1](Penetrasi 2/2.jpg)
 
 
