@@ -5,6 +5,7 @@
 ## B.Install Ubuntu Server
 Menginstal Ubuntu server sebagai OS yang menjadi target penetrasi
 Dibawah ini ada langkah-langkah penginstalan dalam bentuk screenshot
+
 ![gambar1](install ubuntu server/1.jpg)
 ![gambar1](install ubuntu server/2.jpg)
 ![gambar1](install ubuntu server/3.jpg)
@@ -15,6 +16,7 @@ Dibawah ini ada langkah-langkah penginstalan dalam bentuk screenshot
 ## C.Install Kali Linux
 Melakukan penginstalan kali linux sebagai OS yang akan di gunakan untuk melakukan penetrasi.
 Dibawah ini ada langkah-langkah penginstalan dalam bentuk screenshot
+
 ![gambar1](install kali linux/1.jpg)
 ![gambar1](install kali linux/2.jpg)
 ![gambar1](install kali linux/3.jpg)
