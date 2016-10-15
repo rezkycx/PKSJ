@@ -46,9 +46,52 @@
 
 
 ## C. Penjelasan Instalasi
+**1. Install Apache**
+pertama kali kami melakukan penginstalan apache pada ubuntu server dengan command dibawah
+```
+$ sudo apt-get install apache2 apache2-utils 
+```
+Selanjutnya untuk menjalan kan apache menggunakan command berikut ini
+```
+$ sudo systemctl enable apache2
+$ sudo systemctl start apache2
+```
+Selanjut buka pada browser client(kali linux) dan masukan ip ubuntu server untuk melihat apache yang sudah berjalan
+![gambar1](Screenshot/Apache.png)
+
+**2. Install Mysql**
+Selanjutnya kami melakukan penginstalan mysql dengan command berikut ini
+```
+$ sudo apt-get install mysql-client mysql-server
+```
+Selanjutnya menjalan commend ini
+```
+$ sudo mysql_secure_installation
+```
+
+**3. Install PHP**
 
 
 ## D. Uji Penetrasi
+**1. Uji penetrasi dengan wpscan**
+Untuk uji penestasi pertama kita melakukan menggunakan wp scan untuk mengecek plugin apa saja yang digunakan pada ubuntuk server uji penetrasi dilakukan pada kali linux
+```
+wpscan --url localhost/wordpress
+```
+![gambar1](Screenshot/plugin.jpg)
 
+Selanjutnya mengecek username menggunakan wpscan dengan command dibawah
+```
+wpscan --url localhost/wordpress --enumerate u
+```
+![gambar1](Screenshot/User.jpg)
+Selanjutnya mengecek Password menggunakan wpscan dengan command dibawah
+```
+wpscan --url localhost/wordpress --wordlist ~/passlist.txt --thread 10
+```
+![gambar1](Screenshot/Pass.jpg)
+
+**2. Uji penetrasi dengan sqlmap**
+Selanjutnya kami mencoba uji penetrasi menggunakan sqlmap pada plugin leaguemanager
 
 ## E. Kesimpulan dan Saran
