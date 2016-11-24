@@ -45,10 +45,12 @@ Kelompok 13: malicious URL
 
 ## C. Penjelasan Instalasi
 
-Install Python di Ubuntu.
+Install Python di Ubuntu
+
 ```$ sudo apt-get install python```
 
-Install Sql Alchemy. SqlAlchemy dibutuhkan sebagai database toolkit dari Python.
+Install Sql Alchemy. SqlAlchemy dibutuhkan sebagai database toolkit dari Python
+
 ```$ sudo apt-get install python-sqlalchemy```
 
 atau
@@ -82,15 +84,19 @@ Install lagi beberapa dependensi yang akan dibutuhkan.
 
 ```$ sudo apt-get install build-essential git libpcre3 libpcre3-dev libpcre++-dev```
 
-Clone pydeep dari sumber git nya.
+Clone pydeep dari sumber git nya
+
 ```$ cd /opt```
+
 ```$ git clone https://github.com/kbandla/pydeep.git pydeep```
+
 ```$ cd /opt/pydeep/```
 
 python setup.py build
 sudo python setup.py install
 
-Install yara untuk mengategorikan sampel malware (taruh di folder /opt).
+Install yara untuk mengategorikan sampel malware (taruh di folder /opt)
+
 ```$ sudo apt-get install automake -y```
 ```$ cd /opt```
 ```$ svn checkout http://yara-project.googlecode.com/svn/trunk/yara```
