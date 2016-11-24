@@ -46,57 +46,62 @@ Kelompok 13: malicious URL
 ## C. Penjelasan Instalasi
 
 Install Python di Ubuntu.
-$ sudo apt-get install python
+```$ sudo apt-get install python```
 
 Install Sql Alchemy. SqlAlchemy dibutuhkan sebagai database toolkit dari Python.
-$ sudo apt-get install python-sqlalchemy
+```$ sudo apt-get install python-sqlalchemy```
+
 atau
-$ sudo pip install sqlalchemy
+
+```$ sudo pip install sqlalchemy```
 
 Install dependennsi-dependensi yang akan dibutuhkan.
-• dpkt
-• jinja2
-• magic
-• ssdeep
-• pydeep
-• pymongo
-• yara and yara python:
-• libvirt: This library is optional and it uses the KVM machine manager
-• bottlepy: This library is optional and it uses the web.py and api.py utilities
-• pefile
-$ sudo apt-get install python-dpkt python-jinja2 python-magic
-python-pymongo python-libvirt python-bottle python-pefile ssdeep
+* dpkt
+* jinja2
+* magic
+* ssdeep
+* pydeep
+* pymongo
+* yara and yara python:
+* libvirt: This library is optional and it uses the KVM machine manager
+* bottlepy: This library is optional and it uses the web.py and api.py utilities
+* pefile
+
+```$ sudo apt-get install python-dpkt python-jinja2 python-magic python-pymongo python-libvirt python-bottle python-pefile ssdeep```
+
 atau
-$ sudo pip install dpkt jinja2 pymongo bottle pefile
+
+```$ sudo pip install dpkt jinja2 pymongo bottle pefile```
 
 Install lagi beberapa dependensi yang akan dibutuhkan.
-• Build-essential
-• Git
-• Libpcre3
-• Libpcre3-dev
-• Libpcre++-dev
-$ sudo apt-get install build-essential git libpcre3 libpcre3-dev
-libpcre++-dev
+* Build-essential
+* Git
+* Libpcre3
+* Libpcre3-dev
+* Libpcre++-dev
+
+```$ sudo apt-get install build-essential git libpcre3 libpcre3-dev libpcre++-dev```
 
 Clone pydeep dari sumber git nya.
-$ cd /opt
-$ git clone https://github.com/kbandla/pydeep.git pydeep
-$ cd /opt/pydeep/
+```$ cd /opt```
+```$ git clone https://github.com/kbandla/pydeep.git pydeep```
+```$ cd /opt/pydeep/```
+
 python setup.py build
 sudo python setup.py install
 
 Install yara untuk mengategorikan sampel malware (taruh di folder /opt).
-$ sudo apt-get install automake -y
-$ cd /opt
-$ svn checkout http://yara-project.googlecode.com/svn/trunk/yara
-$ cd /opt/yara
-$ sudo ln -s /usr/bin/aclocal-1.11 /usr/bin/aclocal-1.12
-$ ./configure
-$ make
-$ sudo make install
-$ cd yara-python
-$ python setup.py build
-$ sudo python setup.py install
+```$ sudo apt-get install automake -y```
+```$ cd /opt```
+```$ svn checkout http://yara-project.googlecode.com/svn/trunk/yara```
+```$ cd /opt/yara```
+```$ sudo ln -s /usr/bin/aclocal-1.11 /usr/bin/aclocal-1.12```
+```$ ./configure```
+```$ make```
+```$ sudo make install```
+```$ cd yara-python```
+```$ python setup.py build```
+```$ sudo python setup.py install```
 
  Install tcpdump untuk men-dump trafik jaringan yang terjadi saat analisis.
  $ sudo apt-get install tcpdump
