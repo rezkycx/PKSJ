@@ -100,3 +100,34 @@ $ sudo python setup.py install
 
  Install tcpdump untuk men-dump trafik jaringan yang terjadi saat analisis.
  $ sudo apt-get install tcpdump
+
+## C. Analisis Malware
+
+**1. Pdf Creator.exe**
+
+![gambar1](Screenshot Malware Analysis/pdf creator/1.jpg)
+![gambar1](Screenshot Malware Analysis/pdf creator/2.jpg)
+![gambar1](Screenshot Malware Analysis/pdf creator/3.jpg)
+![gambar1](Screenshot Malware Analysis/pdf creator/4.jpg)
+![gambar1](Screenshot Malware Analysis/pdf creator/5.jpg)
+![gambar1](Screenshot Malware Analysis/pdf creator/6.jpg)
+
+**2. zip.exe**
+
+![gambar1](Screenshot Malware Analysis/zip/1.jpg)
+![gambar1](Screenshot Malware Analysis/zip/2.jpg)
+![gambar1](Screenshot Malware Analysis/zip/3.jpg)
+![gambar1](Screenshot Malware Analysis/zip/4.jpg)
+![gambar1](Screenshot Malware Analysis/zip/5.jpg)
+![gambar1](Screenshot Malware Analysis/zip/6.jpg)
+
+**3. TORCHSETUP-R20-N-BC.exe**
+
+![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/1.jpg)
+![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/2.jpg)
+![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/3.jpg)
+![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/4.jpg)
+![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/5.jpg)
+![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/6.jpg)
+
+## D. Kesimpulan dan Saran
