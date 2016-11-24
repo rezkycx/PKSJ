@@ -81,7 +81,7 @@ $ sudo su - cowrie
 
 ## Langkah 3: Checkout kode 
 
-` `` 
+``` 
 $ git clone http://github.com/micheloosterhof/cowrie
 Cloning into 'cowrie'...
 remote: Counting objects: 2965, done.
@@ -137,7 +137,6 @@ $ export PYTHONPATH=/home/cowrie/cowrie
 
 ``` 
 $ ./start.sh 
-``` 
 ``` 
 
 ## Langkah 7: Port redirection (opsional) 
