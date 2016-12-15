@@ -156,3 +156,24 @@ $ touch / etc / authbind / byport / 22
 $ chown cowrie: cowrie / etc / authbind / byport / 22 
 $ chmod 770 / etc / authbind / byport / 22 
 ``` 
+
+## D. Uji Penetrasi
+Setelah menjalankan perintah
+```
+$ sudo su - cowrie
+$ cd cowrie
+$ source cowrie-env/bin/activate
+$ ./start.sh
+```
+Selanjutnya jalankan
+```
+$ tail -f log/cowrie.log
+```
+akan memuncul hasil dibawah ini
+![gambar1](Screenshot/1.png)
+selajutnya akan di coba menggunakan nmap dari kali linux ke cowrie dan akan menghasilkan seperti dibawah
+![gambar1](Screenshot/2.png)
+
+## E. Kesimpulan dan Saran
+pada percobaan Cowrie Honeypot kami pentrasi dapat di lakukan tetapi ada kekurangan pada saat melakukan percobaan yaitu ada permintaan password padahal setting yang ada pada cowrie sudah tidak ada password atau password yang di setting sudah di ketahui tetapi tidak bisa masuk. Saran untuk percobaan selanjutnya adalah mencari cara apakah problem ini disebabkan oleh cowrie atau pentrasi yang dilakukan oleh kali linux.
+

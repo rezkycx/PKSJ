@@ -98,19 +98,94 @@ sudo python setup.py install
 Install yara untuk mengategorikan sampel malware (taruh di folder /opt)
 
 ```$ sudo apt-get install automake -y```
+
 ```$ cd /opt```
+
 ```$ svn checkout http://yara-project.googlecode.com/svn/trunk/yara```
+
 ```$ cd /opt/yara```
+
 ```$ sudo ln -s /usr/bin/aclocal-1.11 /usr/bin/aclocal-1.12```
+
 ```$ ./configure```
+
 ```$ make```
+
 ```$ sudo make install```
+
 ```$ cd yara-python```
+
 ```$ python setup.py build```
+
 ```$ sudo python setup.py install```
 
- Install tcpdump untuk men-dump trafik jaringan yang terjadi saat analisis.
- $ sudo apt-get install tcpdump
+Install tcpdump untuk men-dump trafik jaringan yang terjadi saat analisis.
+```
+$ sudo apt-get install tcpdump
+```
+
+Selanjutnya melakukan install libcap
+```
+sudo apt-get install libcap2-bin
+```
+
+Selanjutnya lakukan Download Cuckoo pada
+http://www.cuckoosandbox.org/download.html
+
+Setelah itu lakukan extract pada filenya yang telah di install
+```
+$ tar –zxvf cuckoo-current.tar.gz
+```
+
+Selanjutnya jika belum melakukan install & download virtual box dapat mendownload pada website ini
+https://www.virtualbox.org/wiki/Downloads
+
+Buat Guest OS pada virtual box
+![gambar1](Screenshot Malware Analysis/Installasi/1.png)
+
+sebelum melakukan pengintalan OS lakukan konfigurasi network terlebih dahulu
+![gambar1](Screenshot Malware Analysis/Installasi/2.png)
+![gambar1](Screenshot Malware Analysis/Installasi/3.png)
+![gambar1](Screenshot Malware Analysis/Installasi/4.png)
+![gambar1](Screenshot Malware Analysis/Installasi/5.png)
+
+Selanjutnya install window XP seperti biasa, setelah windows XP terinstall lakukan konfigurasi shared folder
+![gambar1](Screenshot Malware Analysis/Installasi/6.png)
+![gambar1](Screenshot Malware Analysis/Installasi/7.png)
+![gambar1](Screenshot Malware Analysis/Installasi/8.png)
+
+Selanjutnya buka my computer pilih Map network drive pada drop down menu ketik \\vboxsrv\shares
+
+Selanjutnya pada Guest OS download dan install python
+http://python.org/download/
+
+Install PIL (Python Imaging Library)
+http://www.pythonware.com/products/pil/
+
+matikan windows update dan windows firewall
+
+Selanjutnya copy python agent pada windows XP melalui shared folder
+```
+$ cp /home/digit/cuckoo/agent/agent.py /home/digit/cuckoo/shares/
+```
+
+pada windows XP copy agent.py ke C:\Python27 folder
+ganti nama agent.py menjadi agent.pyw
+copy agent.pyw ke
+C:\Document and settings\username\Start Menu\Programs\Startup
+agar terus berjalan setiap kali windows XP dijalankan
+jalankan agent.pyw
+selanjutnya buka command prompt dan jalankan
+C:\>netstat –aon
+![gambar1](Screenshot Malware Analysis/Installasi/9.png)
+
+selanjutnya setting pada HOST OS
+```
+$ iptables -A FORWARD -o eth0 -i vboxnet0 -s 192.168.56.0/24 -m conntrack --ctstate NEW -j ACCEPT
+$ iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+$ iptables -A POSTROUTING -t nat -j MASQUERADE
+$ sysctl -w net.ipv4.ip_forward=1
+```
 
 ## C. Analisis Malware
 
@@ -142,3 +217,4 @@ Install yara untuk mengategorikan sampel malware (taruh di folder /opt)
 ![gambar1](Screenshot Malware Analysis/TORCHSETUP-R20-N-BC/6.jpg)
 
 ## D. Kesimpulan dan Saran
+Percobaan yang telah dicoba sudah berhasil sampai selesai, telah di coba beberapa file .exe yang telah dicari tetapi ada beberapa yang belom di coba seperti alamat website yang tertera pada saat menjankan file .exe, saran untuk percobaan selanjutnya kalau bisa lakukan percoba pada cuckoo untuk alamat website tersebut
